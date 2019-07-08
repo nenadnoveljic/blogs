@@ -2,9 +2,9 @@
 #
 # (c) 2019 Nenad Noveljic All Rights Reserved
 #
-# usage: opt_qb [-v qb='qb_name'] optimizer_trace_file
+# usage: opt_jo [-v qb='QB_NAME'] [-v jo=join_order] optimizer_trace_file
 #
-# Extracting query block information from the optimizer trace
+# Extracting join order information from the optimizer trace
 #
 # see https://nenadnoveljic.com/blog/extracting-join-order-optimizer-trace
 #
