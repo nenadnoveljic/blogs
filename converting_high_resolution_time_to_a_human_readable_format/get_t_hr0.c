@@ -24,6 +24,9 @@ int main()
   long diff_us ;
   struct timeval t_epoch ;
   int i;
+#if defined(__linux__)
+  struct timespec t_hr;
+#endif
 
   for ( i=0; i<10000; i++)
   {
@@ -32,7 +35,6 @@ int main()
 #endif
 
 #if defined(__linux__)
-    struct timespec t_hr;
     clock_gettime(CLOCK_MONOTONIC, &t_hr);
     hr_time = t_hr.tv_sec * 1e9 + t_hr.tv_nsec;
 #endif
