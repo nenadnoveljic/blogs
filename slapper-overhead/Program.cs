@@ -2,7 +2,8 @@
  * Author: Nenad Noveljic
  * 
  * Testing Slapper.AutoMapper overhead
- * 
+ * see https://nenadnoveljic.com/blog/orm-overhead
+ *
  * Version: 2.0
  * 
 */
