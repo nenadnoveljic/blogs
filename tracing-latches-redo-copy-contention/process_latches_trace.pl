@@ -10,7 +10,7 @@
 #
 # Version: 1.0
 # 
-# see https://nenadnoveljic.com/blog/high-resolution-time-human-readable/
+# see https://nenadnoveljic.com/blog/tracing-latches-redo-copy-contention
 
 use strict ;
 use warnings ;
