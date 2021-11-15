@@ -27,7 +27,7 @@ exec dbms_session.sleep(1) ;
 begin
   dbms_stats.gather_schema_stats( 
     ownname => null, options => 'gather stale',
-    method_opt => 'FOR ALL COLUMNS SIZE 1',
+    method_opt => 'FOR ALL COLUMNS SIZE 1'
     --method_opt => 'FOR ALL COLUMNS SIZE REPEAT'
   ) ;
 end ;
