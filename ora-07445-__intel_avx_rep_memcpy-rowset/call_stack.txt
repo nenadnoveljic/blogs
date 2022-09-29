@@ -1,0 +1,283 @@
+----- Call Stack Trace -----
+calling              call     entry                argument values in hex
+location             type     point                (? means dubious value)
+-------------------- -------- -------------------- ----------------------------
+ksedst1()+95         call     kgdsdst()            7FEB2F541CF0 000000003
+                                                   7FEB2F53C030 ? 7FEB2F53C148 ?
+                                                   000000000 000000083 ?
+ksedst()+58          call     ksedst1()            000000001 000000001
+                                                   7FEB2F53C030 ? 7FEB2F53C148 ?
+                                                   000000000 ? 000000083 ?
+dbkedDefDump()+2344  call     ksedst()             000000001 000000001 ?
+8                                                  7FEB2F53C030 ? 7FEB2F53C148 ?
+                                                   000000000 ? 000000083 ?
+ksedmp()+577         call     dbkedDefDump()       000000003 000000003
+                                                   7FEB2F53C030 ? 7FEB2F53C148 ?
+                                                   000000000 ? 000000083 ?
+ssexhd()+2859        call     ksedmp()             00000044F 000000003 ?
+                                                   7FEB2F53C030 ? 7FEB2F53C148 ?
+                                                   000000000 ? 000000083 ?
+sslssSynchHdlr()+41  call     ssexhd()             00000000B 000000000
+1                                                  7FEB2F5434B0 7FEB2F543380
+                                                   7FEB2F5432F0 000000083 ?
+sslsshandler()+94    call     sslssSynchHdlr()     000002000 000000000 000000000
+                                                   7FEB2F543380 ? 7FEB2F5432F0 ?
+                                                   000000083 ?
+__sighandler()       call     sslsshandler()       000000000 7FEB2F5434B0
+                                                   7FEB2F543380 7FEB2F543380 ?
+                                                   7FEB2F5432F0 ? 000000083 ?
+__intel_avx_rep_mem  signal   __sighandler()       0000001E8 7FEB2B3B0FFB
+cpy()+867                                          000000001 000000001 ?
+                                                   0179B4D8C ? 006ECE256 ?
+ksxb1buf()+715       call     __intel_avx_rep_mem  0000001E8 ? 7FEB2B3B0FFB ?
+                              cpy()                000000001 ? 000000001 ?
+                                                   0179B4D8C ? 006ECE256 ?
+rworupo()+689        call     ksxb1buf()           0000001E8 ? 7FFC7694E4A0
+                                                   0000001E8 ? 000000001 ?
+                                                   0179B4D8C ? 006ECE256 ?
+qerhnWalkMM()+462    call     rworupo()            0000001E8 ? 7FFC7694E4A0 ?
+                                                   0000001E8 ? 000000001 ?
+                                                   0179B4D8C ? 006ECE256 ?
+qerhnProbeRowsetFin  call     qerhnWalkMM()        7FFC7694FD10 000007FFE
+ishMMInner()+2180                                  7FEB2CB048F0 7FEB2D50FF48
+                                                   7FEB340B3140 006ECE256 ?
+qerhnProbeRowsetInn  call     qerhnProbeRowsetFin  7FFC7694FD10 000007FFE
+erOnekey()+2231               ishMMInner()         000030000 360DB6920
+                                                   7FEB340B3140 ? 7FEB2C329100
+qerstRowP()+737      call     qerhnProbeRowsetInn  7FFC00000006 7FEB2C328D08
+                              erOnekey()           000030000 ? 360DB6920
+                                                   7FEB340B3140 ? 7FFC7694FD10
+qerstRowP()+737      call     qerstRowP()          7FFC00000008 7FEB2C449E50
+                                                   000030000 ? 360DB6A08
+                                                   7FEB340B3140 ? 7FFC7694FD10 ?
+kdstf11001010000100  call     qerstRowP()          7FFC00000008 7FEB2C449CD8
+0km()+9980                                         000030000 ? 360DB6B40
+                                                   7FEB340B3140 ? 7FFC7694FD10 ?
+kdsttgr()+2239       call     kdstf11001010000100  7FEB2C449000 000000000
+                              0km()                00917E4F0 7FFC7694FB30
+                                                   000007FFE 7FFC7694EEA0
+qertbFetch()+1090    call     kdsttgr()            7FEB2C449000 ? 000000000 ?
+                                                   000000000 ? 7FFC7694FB30 ?
+                                                   000007FFE ? 000007FFE
+qerstFetch()+449     call     qertbFetch()         7FEB2C449000 ? 000000000 ?
+                                                   00917E4F0 7FFC7694FB30 ?
+                                                   000007FFE ? 000007FFE ?
+rwsfcd()+121         call     qerstFetch()         360DB6B40 7FEB2C449C18
+                                                   00917E4F0 7FFC7694FC50
+                                                   000007FFE 000007FFE ?
+qerstFetch()+449     call     rwsfcd()             360DB6AB0 ? 7FEB2C449D10
+                                                   00917E4F0 ? 7FFC7694FC50 ?
+                                                   000007FFE ? 000007FFE ?
+qerhnFetch()+10675   call     qerstFetch()         360DB6A08 7FEB2C449D90
+                                                   012D8BDA0 7FFC7694FD10
+                                                   000007FFE 000007FFE ?
+qerstFetch()+449     call     qerhnFetch()         304000007 7FEB00007FFE
+                                                   000000001 360DB6920
+                                                   7FEB2D50FE40 7FEB340B3140
+rwsfcd()+121         call     qerstFetch()         360DB6738 7FEB2D510378
+                                                   00917E4F0 7FFC76950020
+                                                   000007FFF 7FEB340B3140 ?
+qerstFetch()+449     call     rwsfcd()             360DB6670 ? 7FEB2D5104A8
+                                                   00917E4F0 ? 7FFC76950020 ?
+                                                   000007FFF ? 7FEB340B3140 ?
+qerhnFetch()+6500    call     qerstFetch()         360DB6590 7FEB2D510560
+                                                   003FAC4B0 7FFC769500E0
+                                                   000007FFF 7FEB340B3140 ?
+qerstFetch()+910     call     qerhnFetch()         360D8C7E0 7FEB2D511EB0
+                                                   000000000 360D8C7E0
+                                                   7FEB2D511EB0 7FEB340B3140
+qerjoFetch()+756     call     qerstFetch()         360D8C5F8 7FEB2D512378
+                                                   000000000 000000000 000000001
+                                                   7FEB340B3140 ?
+qerstFetch()+449     call     qerjoFetch()         360D8B7E8 7FEB2D513988
+                                                   00917E4F0 7FFC76950560
+                                                   000007FFF 7FEB340B3140 ?
+rwsfcd()+121         call     qerstFetch()         360D8B708 7FEB2D513A58
+                                                   00917E4F0 7FFC76950680
+                                                   000007FFF 7FEB340B3140 ?
+qerstFetch()+449     call     rwsfcd()             360D8B640 ? 7FEB2D513B18
+                                                   00917E4F0 ? 7FFC76950680 ?
+                                                   000007FFF ? 7FEB340B3140 ?
+qerhnFetch()+3162    call     qerstFetch()         360D8B560 7FEB2D513B60
+                                                   012D95AB0 7FFC76950740
+                                                   000007FFF 7FEB340B3140 ?
+qerstFetch()+449     call     qerhnFetch()         1174F1A00 7FEB2EB41FA8
+                                                   00917E4F0 1174F1A00
+                                                   7FEB2EB41FA8 7FEB340B3140
+qerghFetch()+603     call     qerstFetch()         1174F17C0 7FEB2EB42518
+                                                   004092D70 7FFC76950BA0
+                                                   000007FFF 7FEB340B3140 ?
+qerstFetch()+449     call     qerghFetch()         1174F1590 7FEB2DF2AEE8
+                                                   00917E4F0 7FFC76950DA0
+                                                   000007FFF 1174F14E0
+qervwFetch()+166     call     qerstFetch()         1174F0F48 7FEB2DF2B340
+                                                   0040DB790 7FFC76950E60
+                                                   000007FFF 1174F14E0 ?
+qerstFetch()+449     call     qervwFetch()         1174F0EB8 7FEB2DF2B428
+                                                   00917E4F0 7FFC76950F40
+                                                   000007FFF 1174F14E0 ?
+qergsFetch()+21004   call     qerstFetch()         1174F0E20 7FEB2DF2B4A8
+                                                   0022AF280 7FFC76951170
+                                                   000007FFF 1174F14E0 ?
+qerstFetch()+449     call     qergsFetch()         1174F0C98 ? 7FEB2DF2B6D0 ?
+                                                   00917E4F0 7FFC76951350
+                                                   000001000 ? 1174F14E0 ?
+opifch2()+3209       call     qerstFetch()         1174F0A28 7FEB2DF2BB70
+                                                   012B5D650 7FFC76951810
+                                                   000000001 1174F14E0 ?
+opiall0()+1606       call     opifch2()            1174F0A28 ? 7FEB2DF2BB70 ?
+                                                   7FFC76951D60 7FFC76951810 ?
+                                                   000000001 ? 1174F14E0 ?
+opikpr()+595         call     opiall0()            1174F0A28 ? 000000022
+                                                   7FFC76951D60 ? 000000000
+                                                   000000000 7FFC769522B0
+opiodr()+1202        call     opikpr()             000000065 ? 000000022 ?
+                                                   7FFC76953D10 000000000 ?
+                                                   000000000 ? 7FFC769522B0 ?
+rpidrus()+198        call     opiodr()             000000065 000000026
+                                                   7FFC76953D10 ? 000000005
+                                                   000000000 ? 7FFC769522B0 ?
+skgmstack()+65       call     rpidrus()            7FFC76952F48 000000026 ?
+                                                   7FEB34062C08 000000005 ?
+                                                   000000000 ? 7FFC769522B0 ?
+rpidru()+132         call     skgmstack()          7FFC76952F48 ? 000000026 ?
+                                                   7FEB34062C08 ? 000000005 ?
+                                                   000000000 ? 7FFC769522B0 ?
+rpiswu2()+543        call     rpidru()             7FFC769537F8 ? 000000026 ?
+                                                   7FEB34062C08 ? 000000005 ?
+                                                   000000000 ? 7FFC769522B0 ?
+kprball()+1046       call     rpiswu2()            7FFC769537F8 ? 000000026 ?
+                                                   7FEB34062C08 ? 000000005 ?
+                                                   7FEB340B3140 ? 7FFC769522B0 ?
+qksdsExeStmt()+7405  call     kprball()            7FFC76953D10 004000180
+                                                   7FEB34062C08 ? 000000005 ?
+                                                   7FEB340B3140 ? 7FFC769522B0 ?
+qksdsExecute()+1312  call     qksdsExeStmt()       7FFC769542D0 7FEB2D2B6288
+                                                   000000001 000000020
+                                                   7FFC76954198 7FFC769522B0 ?
+kkoatVerifyQbEst()+  call     qksdsExecute()       7FFC769542D0 7FEB2D2B6288 ?
+1463                                               000000001 ? 000000020 ?
+                                                   7FFC76954198 ? 7FFC769522B0 ?
+kkeAdjQbCard()+1542  call     kkoatVerifyQbEst()   7FEB2DE882A0 7FEB2CFF88C8
+                                                   7FFC76954808 000000020 ?
+                                                   7FFC76954198 ? 7FFC769522B0 ?
+kkegbyBasic()+1002   call     kkeAdjQbCard()       0000003FC ? 7FEB2CFF88C8 ?
+                                                   7FFC76954808 000000020 ?
+                                                   7FFC76954198 ? 7FFC769522B0 ?
+kkegby0()+84         call     kkegbyBasic()        7FEB2CFF88C8 ? 000000009 ?
+                                                   7FEB2D0D85A8 000000000 ?
+                                                   7FFC76954198 ? 7FFC769522B0 ?
+kkoqbc()+36594       call     kkegby0()            7FEB2CFF88C8 ? 000000009 ?
+                                                   7FEB2D0D85A8 ? 000000000
+                                                   7FEB2D0F1FC8 ? 000000001 ?
+apakkoqb()+159       call     kkoqbc()             7FFC76956700 7FEB2CFF88C8 ?
+                                                   7FEB2D0D85A8 ? 000000000 ?
+                                                   7FEB00000000 000000001 ?
+apaqbdDescendents()  call     apakkoqb()           7FFC76956700 ? 7FEB2CFF88C8 ?
++488                                               391C18BE0 ? 000000000 ?
+                                                   7FEB00000000 ? 000000001 ?
+apaqbdDescendents()  call     apaqbdDescendents()  7FFC76956700 ? 7FEB2CFF88C8 ?
++1350                                              391C18BE0 ? 000000000 ?
+                                                   7FEB00000000 ? 000000001 ?
+apaqbd()+140         call     apaqbdDescendents()  7FFC76956700 ? 7FEB2CFA1B28 ?
+                                                   391C18BE0 ? 000000000 ?
+                                                   7FEB00000000 ? 000000001 ?
+kkqctFullCostTransf  call     apaqbd()             7FFC76956700 ? 000000000 ?
+QB()+355                                           391C18BE0 ? 000000000 ?
+                                                   7FEB00000000 ? 000000001 ?
+kkqctdrvORE()+847    call     kkqctFullCostTransf  7FEB2CFA1B28 ? 000000000 ?
+                              QB()                 003EB4520 ? 000000000 ?
+                                                   7FEB2D11A590 000000001 ?
+kkqoregdtr()+326     call     kkqctdrvORE()        7FEB2CEDF588 ? 000000000 ?
+                                                   003EB4520 ? 000000000 ?
+                                                   7FEB2D11A590 ? 000000001 ?
+qksqbApplyToQbcLoc(  call     kkqoregdtr()         7FEB2CEDF588 7FFC76956B50
+)+857                                              003EB4520 ? 000000000 ?
+                                                   7FEB2D11A590 ? 000000001 ?
+qksqbApplyToQbc()+7  call     qksqbApplyToQbcLoc(  7FEB2CEDF588 ? 000000000 ?
+47                            )                    003EB4520 ? 000000000 ?
+                                                   7FEB2D11A590 ? 000000001 ?
+kkqctdrvTD()+1199    call     qksqbApplyToQbc()    7FEB2CEDF050 ? 000000000 ?
+                                                   003EB4520 ? 000000000 ?
+                                                   7FEB2D11A590 ? 000000001 ?
+kkqoredrv()+74       call     kkqctdrvTD()         000000000 ? 391C18BE0 ?
+                                                   00000000C 000000000 ?
+                                                   7FEB2D11A590 ? 000000001 ?
+kkqdrv()+8401        call     kkqoredrv()          7FEB2EB76F60 391C18BE0
+                                                   00000000C ? 000000000 ?
+                                                   7FEB2D11A590 ? 000000001 ?
+kkqctdrvIT()+1001    call     kkqdrv()             7FEB2EB76F60 000000000
+                                                   00000000C ? 000000000 ?
+                                                   7FEB2D11A590 ? 000000001 ?
+apadrv()+4401        call     kkqctdrvIT()         7FEB2EB76F60 ? 391C18BE0 ?
+                                                   00000000C ? 000000000 ?
+                                                   7FEB2D11A590 ? 000000001 ?
+opitca()+2209        call     apadrv()             391C18BE0 ? 391C18BE0 ?
+                                                   00000000C ? 000000000 ?
+                                                   7FEB2D11A590 ? 000000001 ?
+kksFullTypeCheck()+  call     opitca()             7FEB2EB5DAF0 391C18BE0
+81                                                 7FFC76959DC0 000000000 ?
+                                                   7FEB2D11A590 ? 000000001 ?
+rpiswu2()+2004       call     kksFullTypeCheck()   7FFC769589E8 ? 000000000
+                                                   7FFC76959DC0 ? 000000000 ?
+                                                   7FEB2D11A590 ? 000000001 ?
+kksLoadChild()+7860  call     rpiswu2()            7FFC769589E8 ? 000000000 ?
+                                                   7FFC76959DC0 ? 000000000 ?
+                                                   7FEB340B3140 ? 000000001 ?
+kxsGetRuntimeLock()  call     kksLoadChild()       7FEB340629C0 000000000 ?
++2335                                              7FFC76959DC0 ? 000000000 ?
+                                                   7FEB340B3140 ? 000000001 ?
+kksfbc()+19452       call     kxsGetRuntimeLock()  7FEB340629C0 7FEB2EB5DAF0
+                                                   7FFC76959D40 000000000 ?
+                                                   7FEB340B3140 ? 0B03F9850
+kkspsc0()+1575       call     kksfbc()             7FEB2EB5DAF0 7FEB2EB5DAF0 ?
+                                                   7FFC76959D40 ? 000000000 ?
+                                                   7FEB340B3140 ? 0B03F9850 ?
+kksParseCursor()+11  call     kkspsc0()            7FEB33F52550 7FEB2F3D4078
+4                                                  0000005D7 000000003
+                                                   7FFC00000006 0000000A4
+opiosq0()+2310       call     kksParseCursor()     7FFC7695ABD8 ? 7FEB2F3D4078 ?
+                                                   0000005D7 ? 000000003 ?
+                                                   7FFC00000006 ? 0000000A4 ?
+kpooprx()+287        call     opiosq0()            000000003 7FEB2F3D4078 ?
+                                                   000000000 ? 0000000A4
+                                                   000000000 000000000
+kpoal8()+821         call     kpooprx()            7FFC7695EBC4 7FEB2F3D4078
+                                                   0000005D6 000000001 000000000
+                                                   0000000A4
+opiodr()+1202        call     kpoal8()             00000005E 000000026
+                                                   7FFC7695EBC0 000000001 ?
+                                                   000000000 ? 0000000A4 ?
+ttcpip()+1219        call     opiodr()             00000005E 000000026
+                                                   7FFC7695EBC0 ? 000000000
+                                                   000000000 ? 0000000A4 ?
+opitsk()+1900        call     ttcpip()             7FEB3408CB30 ? 000000026 ?
+                                                   7FFC7695EBC0 000000000 ?
+                                                   7FFC7695E620 7FFC7695EE10 ?
+opiino()+936         call     opitsk()             000000000 000000000
+                                                   7FFC7695EBC0 ? 000000000 ?
+                                                   7FFC7695E620 ? 7FFC7695EE10 ?
+opiodr()+1202        call     opiino()             00000003C 000000004
+                                                   7FFC76960798 000000000 ?
+                                                   7FFC7695E620 ? 7FFC7695EE10 ?
+opidrv()+1094        call     opiodr()             00000003C 000000004
+                                                   7FFC76960798 ? 000000000
+                                                   7FFC7695E620 ? 7FFC7695EE10 ?
+sou2o()+165          call     opidrv()             00000003C 000000004
+                                                   7FFC76960798 000000000 ?
+                                                   7FFC7695E620 ? 7FFC7695EE10 ?
+opimai_real()+422    call     sou2o()              7FFC76960731 00000003C
+                                                   000000004 7FFC76960798
+                                                   7FFC7695E620 ? 7FFC7695EE10 ?
+ssthrdmain()+417     call     opimai_real()        000000000 7FFC76960F88
+                                                   000000004 ? 7FFC76960798 ?
+                                                   7FFC7695E620 ? 7FFC7695EE10 ?
+main()+256           call     ssthrdmain()         000000000 000000002
+                                                   7FFC76960F88 000000001
+                                                   000000000 7FFC7695EE10 ?
+__libc_start_main()  call     main()               000000002 7FFC769611D8
++243                                               7FFC76960F88 ? 000000001 ?
+                                                   000000000 ? 7FFC7695EE10 ?
+_start()+46          call     __libc_start_main()  000DCB960 000000002
+                                                   7FFC769611D8 006EDFAF0 ?
+                                                   000000000 ? 7FFC7695EE10 ?
