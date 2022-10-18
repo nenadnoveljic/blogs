@@ -3,10 +3,10 @@
 #include <string.h>
 #include <oci.h>
 
-static text *username = (text *) "u";
-static text *password = (text *) "Temp_1234";
+static text *username = (text *) "Username";
+static text *password = (text *) "Password";
   /* this dbname can be changed to point to a remote DB for demo to run with */
-static text *dbname   = (text *) "dfex5";
+static text *dbname   = (text *) "DBName";
 
 /* Define SQL statements to be used in program. */
 static text *insert = (text *)"INSERT INTO emp(empno, ename, job, sal, deptno)\
